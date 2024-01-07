@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  foobar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/foobar

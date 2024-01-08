@@ -1,7 +1,11 @@
-def solution(arr, n):
-    print(arr)
-    print(n)
-    print("Hello World")
-    return 0
+def solution(data, n):
+    if type(n) != int or n < 0 or n > 99:
+        return []
+    if len(data) == 0 or len(data) > 99:
+        return []
+    for i in data:
+        if type(i) != int or i < 0:
+            return []
+    return [i for i in data if data.count(i) <= n]
 
-solution([1,2,3,4,5], 5)
+print(solution([1, 2, 3], 1))

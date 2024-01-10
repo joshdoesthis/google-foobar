@@ -1,15 +1,12 @@
 def solution(src, dest):
     if src == dest:
         return 0
-
     moves = [next_available_moves(src)]
-
     while dest not in moves[-1]:
         next_moves = []
         for square in moves[-1]:
             next_moves += next_available_moves(square)
         moves.append(next_moves)
-    
     return len(moves)
 
 def next_available_moves(square):
@@ -32,5 +29,4 @@ def next_available_moves(square):
         y += move[1]
         if x >= 0 and x <= 7 and y >= 0 and y <= 7:
             available_moves.append(board[y][x])
-    
     return available_moves

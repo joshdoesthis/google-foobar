@@ -34,5 +34,3 @@ def next_available_moves(square):
             available_moves.append(board[y][x])
     
     return available_moves
-
-print(solution(0, 9))

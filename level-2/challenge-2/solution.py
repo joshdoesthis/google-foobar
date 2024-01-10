@@ -1,19 +1,38 @@
 def solution(src, dest):
-    # the distance from the knight to itself is 0
-    # the distance from the knight to its next move can be one of +6, +10, +15, +17, -6, -10, -15, -17 squares
-    # calculate the distance from the knight to the edge of the board
-    knight_row = src // 8
-    knight_col = src % 8
+    if src == dest:
+        return 0
 
-    relative_moves = [
-        # check that a move is not off the board or on the same row as the knight
-        6 if knight_col > 5 and 
+    moves = [next_available_moves(src)]
+
+    while dest not in moves[-1]:
+        next_moves = []
+        for square in moves[-1]:
+            next_moves += next_available_moves(square)
+        moves.append(next_moves)
+    
+    return len(moves)
+
+def next_available_moves(square):
+    board = [list(range(i, i + 8)) for i in range(0, 64, 8)]
+    directions = [
+        (1, -2),
+        (-1, -2),
+        (1, 2),
+        (-1, 2),
+        (2, -1),
+        (2, 1),
+        (-2, -1),
+        (-2, 1),
     ]
-    print(relative_moves)
-    # the board is a 8x8 grid
-    # the knight can only move to squares on the board
-    # the knight can only move to squares it has not been to
-    previous_moves = [src] # keep track of all the squares the knight has been to
-    print(previous_moves)
+    available_moves = []
+    for move in directions:
+        x = square % 8
+        y = square // 8
+        x += move[0]
+        y += move[1]
+        if x >= 0 and x <= 7 and y >= 0 and y <= 7:
+            available_moves.append(board[y][x])
+    
+    return available_moves
 
-print(solution(1, 1)) # 3
+print(solution(0, 9))

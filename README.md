@@ -1,3 +1,3 @@
 # Google Foobar
 
-The Google Foobar is a secret hiring challenge by Google. It is how Google hires developers and programmers around the world. The challenge is broken down into 5 levels, with level 1 being the easiest and level 5 being the hardest. Each level has a problem statement written in the form of a story. The story is followed by a problem statement and input/output format which is to be followed. The challenge is to solve the problem within a time limit. The time limit is not strict, but it is recommended to finish the problem within the time limit. The challenge can be taken either Java or Python. The challenge can be taken only once. If you fail to solve the problem, you can't take the challenge again. If you solve the problem, you will be contacted by Google for further rounds of interview.
+Google Foobar was a secret hiring challenge/easter egg found on the Google Search page.
